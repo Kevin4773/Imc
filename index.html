@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importação das fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,300&display=swap" rel="stylesheet">
+
+    <!-- Link do CSS -->
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    
+    <title>Calculadora de IMC</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>calcule seu imc</h1>
+    </header>
+
+    <main>
+
+        <section class="Categorias">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">CATEGORIAS</th>
+                    </tr>
+                </thead>
+                <!-- O elemento <thead> é usado para representar o título de uma <table> . -->
+                <tbody>
+                <!-- O elemento <tbody> é usado para representar o corpo de uma <table> . -->
+                    <tr>
+                        <td>IMC abaixo de 18,5</td>
+                        <td>Abaixo do peso</td>
+                    </tr>
+                    <tr>
+                        <td>IMC 18,5 - 24,9</td>
+                        <td>Peso ideal</td>
+                    </tr>
+                    <tr>
+                        <td>IMC 25, 0 - 29,9</td>
+                        <td>Acima do peso</td>
+                    </tr>
+                    <tr>
+                        <td>IMC 30,0 - 34,9</td>
+                        <td>Obesidade grau I</td>
+                    </tr>
+                    <tr>
+                        <td>IMC 35,0 - 39,9</td>
+                        <td>Obesidade grau II</td>
+                    </tr>
+                    <tr>
+                        <td>IMC maiores que 40</td>
+                        <td>Obesidade grau III</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="Calculadora">
+            <form id="formulario">
+                <div class="campo">
+                    <label>Nome:</label>
+                    <input type="text" id="txtNome" maxlength="30" autofocus>
+                </div>
+                <div class="campo unidade" data-unidade="metros">
+                    <!-- 
+                        Utilização de uma classe "criada" para especificação da unidade de medida na input.
+                        
+                        Onde criamos o nome dessa classe que queremos e adicionamos no CSS.
+                    -->
+                    <label>Altura:</label>
+                    <input type="tel" id="txtAltura" maxlength="4" max="999" min="0">
+                </div>
+                <div class="campo unidade" data-unidade="quilos">
+                    <label>Peso:</label>
+                    <input type="tel" id="txtPeso" maxlength="3" max="999" min="0">
+                </div>
+
+                <button type="button" id="calcular">CALCULAR</button>
+
+                <div id="resultado"></div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <span>Copyright &copy; 2021 | Kevin Alves</span>
+    </footer>
+
+</body>
+
+<!-- Link do JavaScript -->
+<script src="assets/js/script.js" defer></script>
+
+</html>

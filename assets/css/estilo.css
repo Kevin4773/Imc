@@ -1,0 +1,197 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-destaque: #FCC91C;
+    /* 
+        A entidade :root {} serve para criar uma variável em CSS para serem reutilizados ao longo do documento.
+
+        São configuradas usando esta notação (ex: --cor-principal: black; ) e são acessadas usando a funcão var() (ex: color: var(--cor-principal); ).
+    */
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/IMC.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-color: #000A;
+    background-blend-mode: darken;
+    /* 
+        A propriedade background-blend-mode: ; descreve como as imagens de fundo do elemento devem se misturar entre si e a cor de fundo do elemento, ou seja, a intereção da imagem com a cor de fundo para melhor efeito.
+
+        Existem alguns valores para essa propriedade:
+
+        - darken; (causando um efeito escuro com a cor de fundo).
+        - luminosity; (mesmo esquema, mudando a tonalidade para claro ao invés de escuro).
+    */
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    /* 
+        A unidade de medida rem é uma opção das várias formas de estilizar o tamanho da fonte da letra.
+        
+        Obs: 1rem é equivalente a aproximadamente 16px.
+    */
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+}
+
+section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Categorias table {
+    font-size: 1.5rem;
+    border-spacing: 4px;
+    /* 
+        A propriedade border-spacing: ; serve para definir a distância entre as bordas das células adjacentes (apenas para o modelo de "fronteiras separadas").
+    
+    */
+}
+
+.Categorias th {
+    background-color: var(--cor-destaque);
+    height: 50px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.Categorias td {
+    background-color: var(--cor-destaque);
+    height: 50px;
+    width: 250px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 300;
+}
+
+.Calculadora form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* 
+        A propriedade gap: ; serve para aplicar um espaçamento interno nos elementos de display flex, ou seja, é executado entre seus herdeiros. 
+    */
+    width: 250px;
+}
+
+.Calculadora label {
+    color: white;
+    font-weight: 400;
+}
+
+.Calculadora .campo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.Calculadora .campo.unidade::before { 
+    /* ::before é um pseudo de elemento usado para criar um elemento que será referente a classe que "criamos". */
+    content: attr(data-unidade); /* Com a propriedade content: attr(nome-do-elemento); adicionamos a classe/elemento que criamos. */
+    color: #000;
+    position: absolute;
+    background-color: var(--cor-destaque);
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+}
+
+.Calculadora input {
+    height: 50px;
+    border: 2px solid var(--cor-destaque);
+    background-color: transparent;
+    outline: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.Calculadora button {
+    height: 50px;
+    background-color: var(--cor-destaque);
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;   
+}
+
+.Calculadora button:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Calculadora #resultado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-style: italic;
+    height: 100px;
+    background-color: var(--cor-destaque);
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+footer {
+    height: 40px;
+    color: white;
+    font-style: italic;
+    text-align: center;
+    font-size: .8rem;
+}
+
+/* Aplicando a responsividade */
+@media (max-width: 768px) {
+/* @media serve para declaramos uma estilização referente a responsividade do site. */
+
+/* 
+    A propriedade max-width: ; serve para dizer para o navegador que quando nosso site chegar nessa altura ele aplicará as seguites estilizações:
+*/
+    body {
+        height: 200vh;
+    }
+
+    .Categorias {
+        display: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .Calculadora form {
+        width: 90%;
+    }
+}
