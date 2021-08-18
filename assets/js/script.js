@@ -13,7 +13,7 @@ function imc() {
     if (txtNome !== '' && txtAltura !== '' && txtPeso !== '') {
         if (isNaN(txtNome)) {
             
-            if (isNaN(txtPeso) && isNaN(txtAltura)) {
+            if (isNaN(txtPeso) || isNaN(txtAltura)) {
                 
                 return resultado.textContent = 'Tipo de dado inválido'
             
