@@ -172,6 +172,14 @@ footer {
     font-size: .8rem;
 }
 
+.vermelho {
+    color: red;
+}
+
+.azul {
+    color: blue;
+}
+
 /* Aplicando a responsividade */
 @media (max-width: 768px) {
 /* @media serve para declaramos uma estilização referente a responsividade do site. */
@@ -180,7 +188,7 @@ footer {
     A propriedade max-width: ; serve para dizer para o navegador que quando nosso site chegar nessa altura ele aplicará as seguites estilizações:
 */
     body {
-        height: 200vh;
+        height: 100vh;
     }
 
     .Categorias {
@@ -192,6 +200,6 @@ footer {
     }
 
     .Calculadora form {
-        width: 90%;
+        width: 80%;
     }
 }

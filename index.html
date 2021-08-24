@@ -12,9 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,300&display=swap" rel="stylesheet">
 
+    <!-- Links do JavaScript -->
+    <!-- <script src="assets/js/script.js" defer></script> -->
+    <script src="assets/js/professor.js" defer></script>
+
     <!-- Link do CSS -->
     <link rel="stylesheet" href="assets/css/estilo.css">
     
+    <!-- Título da página -->
     <title>Calculadora de IMC</title>
 </head>
 
@@ -33,9 +38,13 @@
                         <th colspan="2">CATEGORIAS</th>
                     </tr>
                 </thead>
-                <!-- O elemento <thead> é usado para representar o título de uma <table> . -->
+                    <!-- 
+                        O elemento <thead> é usado para representar o título de uma <table> . 
+                    -->
                 <tbody>
-                <!-- O elemento <tbody> é usado para representar o corpo de uma <table> . -->
+                    <!-- 
+                        O elemento <tbody> é usado para representar o corpo de uma <table> . 
+                    -->
                     <tr>
                         <td>IMC abaixo de 18,5</td>
                         <td>Abaixo do peso</td>
@@ -68,7 +77,8 @@
             <form id="formulario">
                 <div class="campo">
                     <label>Nome:</label>
-                    <input type="text" id="txtNome" maxlength="30" autofocus>
+                    <input type="text" id="txtNome" maxlength="30" autofocus required pattern="[^0-9]+">
+                    <!-- Expressões regulares -->
                 </div>
                 <div class="campo unidade" data-unidade="metros">
                     <!-- 
@@ -77,16 +87,16 @@
                         Onde criamos o nome dessa classe que queremos e adicionamos no CSS.
                     -->
                     <label>Altura:</label>
-                    <input type="tel" id="txtAltura" maxlength="4" max="999" min="0">
+                    <input type="number" id="txtAltura" step="any" required min="0"max="3">
                 </div>
                 <div class="campo unidade" data-unidade="quilos">
                     <label>Peso:</label>
-                    <input type="tel" id="txtPeso" maxlength="3" max="999" min="0">
+                    <input type="number" id="txtPeso" step="any" required max="500" min="0">
                 </div>
 
                 <button type="button" id="calcular">CALCULAR</button>
 
-                <div id="resultado"></div>
+                <div id="resultado">Seu resultado:</div>
             </form>
         </section>
 
@@ -98,7 +108,5 @@
 
 </body>
 
-<!-- Link do JavaScript -->
-<script src="assets/js/script.js" defer></script>
 
 </html>
